@@ -14,9 +14,33 @@ export const styles = css({
     variants: {
         color: {
             primary: {
-                color: '$orange',
-                backgroundColor: '$darkGreen',
-            }
+                color: '$white',
+                backgroundColor: '$primary2',
+            },
+            secondary: {
+                color: '$white',
+                backgroundColor: '$secondary2',
+            },
+            tertiary: {
+                color: '$white',
+                backgroundColor: '$tertiary2',
+            },
+            quaternary: {
+                color: '$white',
+                backgroundColor: '$quaternary2',
+            },
+            success: {
+                color: '$white',
+                backgroundColor: '$success',
+            },
+            warning: {
+                color: '$white',
+                backgroundColor: '$warning',
+            },
+            error: {
+                color: '$white',
+                backgroundColor: '$error',
+            },
         },
         size: {
             small: {

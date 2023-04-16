@@ -39,7 +39,15 @@ export const Button = ({
 // Verify parameter's types
 Button.propTypes = {
     label: PropTypes.string,
-    color: PropTypes.string,
+    color: PropTypes.oneOf([
+        'primary',
+        'secondary',
+        'tertiary',
+        'quaternary',
+        'success',
+        'warning',
+        'error'
+    ]),
     size: PropTypes.oneOf(['small', 'medium', 'large', 'extraLarge']),
     link: PropTypes.string,
     style: PropTypes.object,
@@ -52,7 +60,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    label: 'Test Button',
+    label: 'Button',
     color: 'primary',
     size: 'medium',
     link: undefined,
