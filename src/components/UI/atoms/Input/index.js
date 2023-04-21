@@ -5,7 +5,7 @@ import { Text } from "../Text";
 
 function handleChange(event) {
     console.log(event.target.value);
-};
+}
 
 export const Input = ({
     type,
@@ -15,7 +15,8 @@ export const Input = ({
     value = undefined,
     size,
     style,
-    isRequired = false
+    isRequired = false,
+    ...props
 }) => {
     return (
         <Text.Label id={type + '-' + name}>{label}
@@ -32,6 +33,7 @@ export const Input = ({
                 placeholder={placeholder}
                 required={isRequired}
                 onChange={handleChange}
+                {...props}
             />
         </Text.Label>
     )
@@ -58,3 +60,13 @@ Input.defaultProps = {
     style: undefined,
 };
 
+Input.Text = (props) => (<Input type={"text"} size={"medium"} {...props} />);
+Input.Email = (props) => (<Input type={"email"} size={"medium"} {...props} />);
+Input.Number = (props) => (<Input
+    type={"text"}
+    size={"medium"}
+    pattern="[0-9]+"
+    onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} {...props} />);
+Input.Password = (props) => (<Input type={"password"} size={"medium"} {...props} />);
+Input.Url = (props) => (<Input type={"url"} size={"medium"} {...props} />);
+Input.Date = (props) => (<Input type={"date"} size={"medium"} {...props} />);

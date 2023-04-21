@@ -1,4 +1,4 @@
-import { Text } from "../components/UI/atoms/Text";
+import { Text } from "./index";
 
 export default {
     title: 'Example/Text',

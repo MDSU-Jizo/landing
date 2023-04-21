@@ -29,62 +29,48 @@ export const Dev = () => {
                 <Text>Default</Text><br/>
             </div>
             <div>
-                <Button size={"extraLarge"} color={"primary"} textProps={{size:'$5'}} />
-                <Button label={"Success"} size={"large"} color={"success"} textProps={{size:'$6'}} />
-                <Button label={"Warning"} size={"medium"} color={"warning"} textProps={{size:'$7'}} />
-                <Button label={"Error"} size={"small"} color={"error"} textProps={{size:'$9'}} />
+                <Button size={"extraLarge"} color={"primary"} textProps={{size: '$5', color: '$white'}} />
+                <Button label={"Success"} size={"large"} color={"success"} textProps={{size:'$6', color: '$white'}} />
+                <Button label={"Warning"} size={"medium"} color={"warning"} textProps={{size:'$7', color: '$white'}} />
+                <Button label={"Error"} size={"small"} color={"error"} textProps={{size:'$9', color: '$white'}} />
             </div>
             <div>
-                <Input
-                    type={"text"}
+                <Input.Text
                     label={"Input Text"}
                     name={"InputTestText"}
                     placeholder={"Your text here."}
                     size={"medium"}
                     style={{display: "flex", flexDirection: "column"}}
                 />
-                <Input
-                    type={"text"}
-                    label={"Input Text2"}
-                    name={"InputTestText2"}
-                    placeholder={"Your text here."}
-                    size={"medium"}
-                    style={{display: "flex", flexDirection: "column"}}
-                />
-                <Input
-                    type={"email"}
+                <Input.Email
                     label={"Input Email"}
                     name={"InputTestEmail"}
                     placeholder={"Your email here."}
                     size={"medium"}
                     style={{display: "flex", flexDirection: "column"}}
                 />
-                <Input
-                    type={"number"}
+                <Input.Number
                     label={"Input Number"}
                     name={"InputTestNumber"}
                     value={0}
                     size={"medium"}
                     style={{display: "flex", flexDirection: "column"}}
                 />
-                <Input
-                    type={"password"}
+                <Input.Password
                     label={"Input Password"}
                     name={"InputTestPassword"}
                     placeholder={"Your password here."}
                     size={"medium"}
                     style={{display: "flex", flexDirection: "column"}}
                 />
-                <Input
-                    type={"url"}
+                <Input.Url
                     label={"Input URL"}
                     name={"InputTestUrl"}
                     placeholder={"Your URL here."}
                     size={"medium"}
                     style={{display: "flex", flexDirection: "column"}}
                 />
-                <Input
-                    type={"date"}
+                <Input.Date
                     label={"Input Date"}
                     name={"InputTestDate"}
                     value={date}
