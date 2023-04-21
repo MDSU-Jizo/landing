@@ -4,6 +4,7 @@ import {css} from "../../themes";
 import { styles } from "./style";
 import {Input} from "../../UI/atoms/Input";
 import moment from "moment";
+import {Image} from "../../UI/atoms/Image";
 
 
 
@@ -33,6 +34,9 @@ export const Dev = () => {
                 <Button label={"Success"} size={"large"} color={"success"} textProps={{size:'$6', color: '$white'}} />
                 <Button label={"Warning"} size={"medium"} color={"warning"} textProps={{size:'$7', color: '$white'}} />
                 <Button label={"Error"} size={"small"} color={"error"} textProps={{size:'$9', color: '$white'}} />
+            </div>
+            <div>
+                <Image></Image>
             </div>
             <div>
                 <Input.Text
