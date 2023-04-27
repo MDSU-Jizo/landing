@@ -4,7 +4,7 @@ import { styles } from "./style";
 
 export const Image = ({
     src,
-    label,
+    alt,
     width,
     height,
     style,
@@ -13,7 +13,7 @@ export const Image = ({
     return (
         <img
             src={src}
-            alt={label}
+            alt={alt}
             width={width}
             height={height}
             className={styles({
@@ -28,15 +28,15 @@ export const Image = ({
 
 Image.propTypes = {
     src: PropTypes.string,
-    label: PropTypes.string,
+    alt: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
     style: PropTypes.object,
 }
 
 Image.defaultProps = {
-    src: "https://media.istockphoto.com/id/516318760/photo/red-fox-vulpes-vulpes.jpg?s=612x612&w=0&k=20&c=jelfBarPxOUUjhiRWDtXlDMAUJJqUih3nnTo7HI4zx8=",
-    label: "Picture of a fox",
-    width: 612,
-    height: 408,
+    src: undefined,
+    alt: undefined,
+    width: undefined,
+    height: undefined,
 }

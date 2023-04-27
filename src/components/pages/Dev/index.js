@@ -5,8 +5,11 @@ import { styles } from "./style";
 import {Input} from "../../UI/atoms/Input";
 import moment from "moment";
 import {Image} from "../../UI/atoms/Image";
+import {Link} from "../../UI/atoms/Link";
+import {Label} from "../../UI/molecules/Label";
 
-
+const image = require("../../../assets/jizo_outlined.jpeg");
+const readme = require("../../../assets/README.md");
 
 export const Dev = () => {
     const date = moment().format('YYYY-MM-DD')
@@ -30,10 +33,34 @@ export const Dev = () => {
                 <Text>Default</Text><br/>
             </div>
             <div>
-                <Button size={"extraLarge"} color={"primary"} textProps={{size: '$5', color: '$white'}} />
-                <Button label={"Success"} size={"large"} color={"success"} textProps={{size:'$6', color: '$white'}} />
-                <Button label={"Warning"} size={"medium"} color={"warning"} textProps={{size:'$7', color: '$white'}} />
-                <Button label={"Error"} size={"small"} color={"error"} textProps={{size:'$9', color: '$white'}} />
+                <Link href={"https://www.google.fr"} text={{text: "Link"}}/><br />
+                <Link href={"https://www.google.fr"} image={{
+                    src: "https://media.istockphoto.com/id/516318760/photo/red-fox-vulpes-vulpes.jpg?s=612x612&w=0&k=20&c=jelfBarPxOUUjhiRWDtXlDMAUJJqUih3nnTo7HI4zx8=",
+                    alt: "Picture of a fox",
+                    width: 612,
+                    height: 408
+                }}/>
+                <Link href={"https://www.google.fr"} image={{
+                    src: image,
+                    alt: "Pouet",
+                    width: 200,
+                    height: 200
+                }}/>
+                <Link download={image} image={{
+                    src: image,
+                    alt: "Jizo's logo representing a cute fox smiling",
+                    width: 200,
+                    height: 200
+                }}/>
+                <Link download={readme} text={{
+                    text: "Download here.",
+                }}/>
+            </div>
+            <div>
+                <Button size={"extraLarge"} color={"primary"} textProps={{size: '$5', color: 'white'}} />
+                <Button label={"Success"} size={"large"} color={"success"} textProps={{size:'$6', color: 'white'}} />
+                <Button label={"Warning"} size={"medium"} color={"warning"} textProps={{size:'$7', color: 'white'}} />
+                <Button label={"Error"} size={"small"} color={"error"} textProps={{size:'$9', color: 'white'}} />
             </div>
             <div>
                 <Image></Image>
@@ -80,6 +107,18 @@ export const Dev = () => {
                     value={date}
                     size={"medium"}
                     style={{display: "flex", flexDirection: "column"}}
+                />
+                <Label
+                    label={"LabelText"}
+                    input={{
+                        type: 'text',
+                        name: 'textInput',
+                        placeholder: 'Your text here.',
+                    }}
+                    color={'primary'}
+                    htmlFor={'text-textInput'}
+                    isOptional={true}
+                    message={{color: 'secondary', text:'Message example.'}}
                 />
             </div>
             <div className={styles({

@@ -9,7 +9,6 @@ function handleChange(event) {
 
 export const Input = ({
     type,
-    label,
     name,
     placeholder = undefined,
     value = undefined,
@@ -19,23 +18,21 @@ export const Input = ({
     ...props
 }) => {
     return (
-        <Text.Label id={type + '-' + name}>{label}
-            <input
-                type={type}
-                id={type + '-' + name}
-                className={styles({
-                    css: {
-                        size,
-                        ...style,
-                    },
-                })}
-                defaultValue={value}
-                placeholder={placeholder}
-                required={isRequired}
-                onChange={handleChange}
-                {...props}
-            />
-        </Text.Label>
+        <input
+            type={type}
+            id={type + '-' + name}
+            className={styles({
+                css: {
+                    size,
+                    ...style,
+                },
+            })}
+            defaultValue={value}
+            placeholder={placeholder}
+            required={isRequired}
+            onChange={handleChange}
+            {...props}
+        />
     )
 };
 
