@@ -7,7 +7,8 @@ import { Input } from "../../atoms/Input";
 export const Label = ({
     label,
     message,
-    input,
+    input = undefined,
+    textarea = undefined,
     style,
     isRequired = false,
     isOptional = false,
@@ -19,7 +20,7 @@ export const Label = ({
                 ...style
             }
         })}>
-            {!isRequired && !isOptional && (
+            {!isRequired && !isOptional && input && (
                 <>
                     <Text.Label
                         {...props}
@@ -35,7 +36,7 @@ export const Label = ({
                 </>
             )}
 
-            {isRequired && !isOptional && (
+            {isRequired && !isOptional && input && (
                 <>
                     <div className={styles({
                         css: {
@@ -57,7 +58,7 @@ export const Label = ({
                 </>
             )}
 
-            {!isRequired && isOptional && (
+            {!isRequired && isOptional && input && (
                 <>
                     <div className={styles({
                         css: {
@@ -70,12 +71,34 @@ export const Label = ({
                         >
                             {label}
                         </Text.Label>
-                        <Text.Small color={'black'} style={{fontStyle: 'italic'}}>Optional</Text.Small>
+                        <Text.Small color={'default'} style={{fontStyle: 'italic'}}>Optional</Text.Small>
                     </div>
                     {message && (
                         <Text.Small color={message.color} >{message.text}</Text.Small>
                     )}
                     <Input {...input} />
+                </>
+            )}
+
+            { textarea && !input && (
+                <>
+                    <div className={styles({
+                        css: {
+                            display: 'flex',
+                            flexDirection: 'row',
+                        }
+                    })}>
+                        <Text.Label
+                            {...props}
+                        >
+                            {label}
+                        </Text.Label>
+                        <Text.Small color={'default'} style={{fontStyle: 'italic'}}>Optional</Text.Small>
+                    </div>
+                    {message && (
+                        <Text.Small color={message.color} >{message.text}</Text.Small>
+                    )}
+                    <textarea id={textarea.name} {...textarea} />
                 </>
             )}
         </div>
@@ -90,9 +113,5 @@ Label.propTypes = {
 
 Label.defaultProps = {
     label: 'Label',
-    input: {
-        type: 'text',
-        name: 'InputExample',
-        placeholder: 'Placeholder Example',
-    }
+    input: undefined
 };

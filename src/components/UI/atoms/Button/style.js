@@ -3,13 +3,27 @@ import { css } from "../../../themes";
 export const styles = css({
     padding: "0px",
     border: "none",
-    borderRadius: 100,
+    borderRadius: 10,
     textAlign: "center",
     backgroundColor: "transparent",
     cursor: "pointer",
 
     whiteSpace: "nowrap",
     onlyText: true,
+
+    "#button_with_icon_and_text": {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center",
+        padding: "8px",
+
+        "& img": {
+            position: "relative",
+            // transform: "translate(-10%, -8%)",
+        },
+    },
+
     // https://stitches.dev/docs/variants
     variants: {
         color: {
@@ -62,8 +76,8 @@ export const styles = css({
                 fontWeight: 600,
             },
             extraLarge: {
-                width: "200px",
-                height: "60px",
+                width: "219px",
+                height: "62px",
                 fontSize: "$5",
                 fontWeight: 800,
             },

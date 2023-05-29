@@ -1,7 +1,18 @@
-import { css } from "../../../themes";
+import { css, globalCss } from "../../../themes";
+import rockwell from "../../../../assets/fonts/Rockwell.ttf";
+import nunito from "../../../../assets/fonts/Nunito-Medium.ttf";
 
 export const styles = css({
+
     variants: {
+        fonts: {
+            nunito: {
+                fontFamily: 'Nunito',
+            },
+            rockwell: {
+                fontFamily: 'Rockwell',
+            },
+        },
         color: {
             default: {
                 color: "$black",
@@ -32,4 +43,17 @@ export const styles = css({
             },
         },
     },
+});
+
+export const globalStyles = globalCss({
+    '@font-face': [
+        {
+            fontFamily: 'Rockwell',
+            src: `url("${rockwell}") format("ttf")`
+        },
+        {
+            fontFamily: 'Nunito',
+            src: `url("${nunito}") format("ttf")`
+        }
+    ],
 });

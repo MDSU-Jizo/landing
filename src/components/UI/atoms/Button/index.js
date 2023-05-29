@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { styles } from "./style";
 import {Text} from "../Text";
+import {Image} from "../Image";
 
 export const Button = ({
     label,
@@ -30,8 +31,15 @@ export const Button = ({
                 isDisabled: isDisabled,
             })}
         >
-            {icon /* TODO */}
-            <Text.Button {...textProps}>{label}</Text.Button>
+            <div id={"button_with_icon_and_text"}>
+                {icon &&
+                    <Image src={icon} />
+                }
+
+                {label &&
+                    <Text.Button {...textProps}>{label}</Text.Button>
+                }
+            </div>
         </button>
     );
 };
