@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { styles } from "./style";
+import {globalStyles, styles} from "./style";
 
 export const Text = React.forwardRef(({
         tag: Tag,
         size,
         style,
+        fonts = 'nunito',
         color,
         weight = "$normal",
         transform,
         decoration,
         ...props
     }, ref) => {
+        globalStyles();
         let text = props.children;
         delete props.children;
         return (
@@ -19,7 +21,9 @@ export const Text = React.forwardRef(({
                 ref={ref}
                 className={styles({
                     color: color,
+                    fonts: fonts,
                     css: {
+                        tag: Tag,
                         fontSize: size,
                         fontWeight: weight,
                         textTransform: transform,
@@ -64,13 +68,13 @@ Text.defaultProps = {
     children: 'Text sample',
 };
 
-Text.H1 = (props) => (<Text tag={"h1"} size={"$1"} weight={"$bold"} {...props} />);
-Text.H2 = (props) => (<Text tag={"h2"} size={"$2"} weight={"$semiBold"} {...props} />);
-Text.H3 = (props) => (<Text tag={"h3"} size={"$3"} weight={"$semiBold"} {...props} />);
-Text.H4 = (props) => (<Text tag={"h4"} size={"$4"} weight={"$semiBold"} {...props} />);
-Text.Title = (props) => (<Text tag={"h5"} size={"$5"} weight={"$semiBold"} {...props} />);
-Text.Label = (props) => (<Text tag={"label"} size={"$6"} weight={"$medium"} htmlFor={props.for} {...props} />);
-Text.Subtitle = (props) => (<Text tag={"span"} size={"$7"} weight={"$medium"} {...props} />);
+Text.H1 = (props) => (<Text tag={"h1"} size={"$1"} weight={"$bold"} fonts={"rockwell"} {...props} />);
+Text.H2 = (props) => (<Text tag={"h2"} size={"$2"} weight={"$semiBold"} fonts={"rockwell"} {...props} />);
+Text.H3 = (props) => (<Text tag={"h3"} size={"$3"} weight={"$semiBold"} fonts={"rockwell"} {...props} />);
+Text.H4 = (props) => (<Text tag={"h4"} size={"$4"} weight={"$semiBold"} fonts={"rockwell"} {...props} />);
+Text.Title = (props) => (<Text tag={"h5"} size={"$5"} weight={"$semiBold"} fonts={"rockwell"} {...props} />);
+Text.Label = (props) => (<Text tag={"label"} size={"$6"} weight={"$medium"} htmlFor={props.for} fonts={"rockwell"} {...props} />);
+Text.Subtitle = (props) => (<Text tag={"span"} size={"$7"} weight={"$medium"} fonts={"rockwell"} {...props} />);
 Text.P = (props) => (<Text tag={"p"} size={"$8"} {...props} />);
 Text.Div = (props) => (<Text tag={"div"} size={"$8"} {...props} />);
 Text.Span = (props) => (<Text tag={"span"} size={"$8"} {...props} />);

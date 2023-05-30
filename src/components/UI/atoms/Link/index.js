@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { styles } from "./style";
 import { Text } from "../Text";
 import {Image} from "../Image";
+import {Button} from "../Button";
 
 export const Link = ({
     href,
@@ -12,6 +13,8 @@ export const Link = ({
     icon,
     text,
     download,
+    isButton = false,
+    buttonProps = undefined,
     ...props
 }) => {
     if (download) {
@@ -40,6 +43,9 @@ export const Link = ({
                     />
                 )}
                 {icon}
+                {isButton &&
+                    <Button {...buttonProps}/>
+                }
             </a>
         )
     }
@@ -68,6 +74,9 @@ export const Link = ({
                 />
             )}
             {icon}
+            {isButton &&
+                <Button {...buttonProps}/>
+            }
         </a>
     )
 };
@@ -79,7 +88,9 @@ Link.propTypes = {
     image: PropTypes.object,
     icon: PropTypes.object,
     text: PropTypes.object,
-    download: PropTypes.string
+    download: PropTypes.string,
+    isButton: PropTypes.bool,
+    buttonProps: PropTypes.object,
 };
 
 Link.defaultProps = {
@@ -90,4 +101,6 @@ Link.defaultProps = {
     icon: undefined,
     text: undefined,
     download: undefined,
+    button: undefined,
+    buttonProps: undefined,
 };

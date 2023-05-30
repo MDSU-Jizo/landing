@@ -1,6 +1,5 @@
 import { Button } from '../../UI/atoms/Button';
 import { Text } from "../../UI/atoms/Text";
-import {css} from "../../themes";
 import { styles } from "./style";
 import {Input} from "../../UI/atoms/Input";
 import moment from "moment";
