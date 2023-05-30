@@ -4,7 +4,6 @@ import {Text} from "../../UI/atoms/Text";
 import appleIcon from "../../../assets/icons/apple.svg";
 import googlePlayIcon from "../../../assets/icons/googlePlay.svg";
 import {Link} from "../../UI/atoms/Link";
-import {Input} from "../../UI/atoms/Input";
 import {Label} from "../../UI/molecules/Label";
 import {Button} from "../../UI/atoms/Button";
 

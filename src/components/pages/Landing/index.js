@@ -1,4 +1,3 @@
-import {Text} from "../../UI/atoms/Text";
 import { styles, globalStyle } from "./style";
 import {Image} from "../../UI/atoms/Image";
 
