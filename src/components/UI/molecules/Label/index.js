@@ -80,7 +80,7 @@ export const Label = ({
                 </>
             )}
 
-            { textarea && !input && (
+            {!isRequired && isOptional && textarea && !input && (
                 <>
                     <div className={styles({
                         css: {
@@ -94,6 +94,28 @@ export const Label = ({
                             {label}
                         </Text.Label>
                         <Text.Small color={'default'} style={{fontStyle: 'italic'}}>Optional</Text.Small>
+                    </div>
+                    {message && (
+                        <Text.Small color={message.color} >{message.text}</Text.Small>
+                    )}
+                    <textarea id={textarea.name} {...textarea} />
+                </>
+            )}
+
+            {isRequired && !isOptional && textarea && !input && (
+                <>
+                    <div className={styles({
+                        css: {
+                            display: 'flex',
+                            flexDirection: 'row',
+                        }
+                    })}>
+                        <Text.Label
+                            {...props}
+                        >
+                            {label}
+                        </Text.Label>
+                        <Text.Span color={'error'}>*</Text.Span>
                     </div>
                     {message && (
                         <Text.Small color={message.color} >{message.text}</Text.Small>

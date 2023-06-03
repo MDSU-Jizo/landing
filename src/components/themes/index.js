@@ -34,6 +34,11 @@ export const { css, createTheme, globalCss} = createStitches({
 
             white: "#ffffff",
             black: "#272727",
+            brown: "#5B3923",
+            orange: "#E07D05",
+            beige: "#FFE4C7",
+            darkGreen: "#3A4C37",
+            grey: "#748172",
 
             ground1: '#CCA47A',
             ground2: '#A58065',
