@@ -1,11 +1,19 @@
 import { styles } from "./style";
 import {useEffect, useRef, useState} from "react";
 import {Text} from "../../UI/atoms/Text";
-import appleIcon from "../../../assets/icons/apple.svg";
-import googlePlayIcon from "../../../assets/icons/googlePlay.svg";
 import {Link} from "../../UI/atoms/Link";
 import {Label} from "../../UI/molecules/Label";
 import {Button} from "../../UI/atoms/Button";
+import {Image} from "../../UI/atoms/Image";
+import appleIcon from "../../../assets/icons/apple.svg";
+import googlePlayIcon from "../../../assets/icons/googlePlay.svg";
+import groundPath from "../../../assets/ground/walkpath.svg";
+import fox from "../../../assets/icons/icon-fox.svg";
+import tree from "../../../assets/icons/icon-tree.svg";
+import magnifier from "../../../assets/icons/icon-magnifier.svg";
+import phone from "../../../assets/icons/icon-phone.svg";
+import download from "../../../assets/icons/icon-download.svg";
+import jizo from "../../../assets/jizo.svg";
 
 const getWindowDimensions = () => {
     const { innerWidth: width, innerHeight: height } = window;
@@ -15,6 +23,7 @@ const getWindowDimensions = () => {
 export const FixedPage = () => {
     const elRef = useRef();
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    const [scroll, setScroll] = useState(0)
 
     useEffect(() => {
         const handleResize = () => {
@@ -42,11 +51,370 @@ export const FixedPage = () => {
     return elRef;
     }, []);
 
+    const handleScroll = () => {
+        setScroll(elRef.current.scrollLeft)
+    };
+
     return (
-        <div ref={elRef} className={styles({})}>
+        <div ref={elRef} className={styles({})}
+             onScroll={handleScroll}>
             <div id={"background_image"} className={styles({css: {
                 width: `${windowDimensions.width * 7}px`,
-                }})}></div>
+                }})}>
+            </div>
+            <Image id={"ground_path"} src={groundPath} alt={"path"} />
+
+            {
+                scroll >= 0 && scroll < (windowDimensions.width) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "100%",
+                            height: "100%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+            {
+                scroll >= windowDimensions.width && scroll < (windowDimensions.width * 2) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+            {
+                scroll >= (windowDimensions.width * 2) && scroll < (windowDimensions.width * 3) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "100%",
+                            height: "100%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+            {
+                scroll >= (windowDimensions.width * 3) && scroll < (windowDimensions.width * 4) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "100%",
+                            height: "100%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+            {
+                scroll >= (windowDimensions.width * 4) && scroll < (windowDimensions.width * 5) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "100%",
+                            height: "100%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+            {
+                scroll >= (windowDimensions.width * 5) && scroll < (windowDimensions.width * 6) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "100%",
+                            height: "100%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+            {
+                scroll >= (windowDimensions.width * 6) && scroll < (windowDimensions.width * 7) &&
+                <>
+                    <Link id={"fox_icon"} href={"#section_1"} target={""} image={{
+                        src: fox,
+                        alt: "A fox icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"tree_icon"} href={"#section_3"} target={""} image={{
+                        src: tree,
+                        alt: "A tree icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"magnifier_icon"} href={"#section_4"} target={""} image={{
+                        src: magnifier,
+                        alt: "A magnifier icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"phone_icon"} href={"#section_5"} target={""} image={{
+                        src: phone,
+                        alt: "A phone icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                    <Link id={"download_icon"} href={"#section_6"} target={""} image={{
+                        src: download,
+                        alt: "A download icon",
+                        style: {
+                            width: "50%",
+                            height: "50%",
+                            transform: "translateX(-30%)"
+                        },
+                    }} />
+                </>
+            }
+
             <div id={"sections"}>
                 <section id={"section_1"} className={styles({css: {
                         width: `${windowDimensions.width}px`,
@@ -56,7 +424,7 @@ export const FixedPage = () => {
                         <div id={"section_1_title"}>
                             <Text.H1 color={"white"} style={{fontSize: "150px"}} fonts={"rockwell"}>
                                 <div>Rejoins l'aventure</div>
-                                <div id={"jizo"}>JIZO</div>
+                                <Image id={"jizo"} src={jizo} alt={"Jizo font"} />
                             </Text.H1>
                         </div>
                         <div id={"section_1_buttons"}>
@@ -220,7 +588,7 @@ export const FixedPage = () => {
                         <div id={"section_6_title"}>
                             <Text.H2 color={"white"} style={{fontSize: "150px"}}>
                                 <div>Télécharge</div>
-                                <div id={"jizo"}>JIZO</div>
+                                <Image id={"jizo"} src={jizo} alt={"Jizo font"} />
                             </Text.H2>
                         </div>
                         <div id={"section_6_buttons"}>
@@ -262,7 +630,7 @@ export const FixedPage = () => {
                 }})}>
                     <div id={"contact"}>
                         <form>
-                            <Text.H3 style={{}}>Contacte-nous</Text.H3>
+                            <Text.H3>Contacte-nous</Text.H3>
                             <div id={"firstname_lastname"}>
                                 <Label
                                     label={"Prénom"}
@@ -289,7 +657,7 @@ export const FixedPage = () => {
                                     isRequired={true}
                                 />
                             </div>
-                            <div>
+                            <div id={"email_message"}>
                                 <Label
                                     label={"Email"}
                                     input={{
@@ -310,12 +678,25 @@ export const FixedPage = () => {
                                     }}
                                     color={"default"}
                                     htmlFor={"message"}
-                                    isOptional={true}
+                                    isOptional={false}
+                                    isRequired={true}
                                 >
                                 </Label>
                             </div>
                             <div id={"form_button"}>
-                                <Button label={"Envoyer"} size={"medium"} textProps={{size:'$6', color: 'white'}} style={{margin: "8px", backgroundColor: "$black"}}/>
+                                <Button
+                                    label={"Envoyer"}
+                                    size={"medium"}
+                                    textProps={{
+                                        size:'$6',
+                                        color: 'white'
+                                    }}
+                                    style={{
+                                        margin: "8px",
+                                        backgroundColor: "$orange",
+                                        width: "283px",
+                                    }}
+                                />
                             </div>
                         </form>
                     </div>
