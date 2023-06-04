@@ -146,6 +146,15 @@ export const styles = css({
             position: "absolute",
             top: 0,
             zIndex: 6,
+            display: "flex",
+            justifyContent: "center",
+
+            "#mockup": {
+                width: "70%",
+                height: "90%",
+                position: "relative",
+                zIndex: 888,
+            }
         },
 
         "#section_6": {

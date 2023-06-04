@@ -14,6 +14,7 @@ import magnifier from "../../../assets/icons/icon-magnifier.svg";
 import phone from "../../../assets/icons/icon-phone.svg";
 import download from "../../../assets/icons/icon-download.svg";
 import jizo from "../../../assets/jizo.svg";
+import mockup from "../../../assets/mockup.png";
 
 const getWindowDimensions = () => {
     const { innerWidth: width, innerHeight: height } = window;
@@ -578,6 +579,7 @@ export const FixedPage = () => {
                         height: `${windowDimensions.height}px`,
                         left: `${windowDimensions.width * 4}px`
                 }})}>
+                    <Image id={"mockup"} src={mockup} alt={"A mockup of the Jizo app"}/>
                 </section>
                 <section id={"section_6"} className={styles({css: {
                         width: `${windowDimensions.width}px`,
